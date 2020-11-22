@@ -15,7 +15,7 @@ i,j :INTEGER
 n: ARRAY_OF_INTEGER[50] // n:= [[1, 5, 7], [5, 12, 2], [9, 4, 11],[3, 10, 8],[12, 7, 1],[2, 4, 9]]
 BEGIN
 
-  FOR i FROM 0 TO n.length-1 STEP 1 DO
+  FOR i FROM 0 TO n.length-2 STEP 2 DO
     FOR j FROM i+1 TO n.length-1 DO
        IF ( dot_product (n[i], n[j])==0) THEN
            write( "${n[i]} and ${n[j]} are orthogonal ")
