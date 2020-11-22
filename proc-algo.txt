@@ -1,0 +1,29 @@
+PROCEDURE dot_product (VAR v1:ARRAY_OF_INTEGER[3], VAR v2:ARRAY_OF_INTEGER[3])
+VAR
+i, sum : INTEGER
+BEGIN
+sum:= 0;
+  for i FROM 0 TO 2 DO
+        sum:= sum + (v1[i] * v2[i])
+  END_FOR
+    
+END
+
+ALGORITHM  orthogonal_vectors 
+VAR
+i,j :INTEGER
+n: ARRAY_OF_INTEGER[50] // n:= [[1, 5, 7], [5, 12, 2], [9, 4, 11],[3, 10, 8],[12, 7, 1],[2, 4, 9]]
+BEGIN
+
+  FOR i FROM 0 TO n.length-1 STEP 1 DO
+    FOR j FROM i+1 TO n.length-1 DO
+       IF ( dot_product (n[i], n[j])==0) THEN
+           write( "${n[i]} and ${n[j]} are orthogonal ")
+       ELSE 
+            write ("${n[i]} and ${n[j]} are not orthogonal ")
+       END_IF
+    END_FOR
+  END_FOR
+END
+
+
